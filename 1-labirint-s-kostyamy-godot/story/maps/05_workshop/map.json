@@ -1,0 +1,636 @@
+{
+  "id": "05_workshop",
+  "image": "background.png",
+  "image_size": [
+    1536,
+    1024
+  ],
+  "hit_radius": 34,
+  "start": "c01",
+  "exit": "c50",
+  "intro": "intro_5",
+  "goal": "goal_5",
+  "outro": "exit_5",
+  "dark": false,
+  "cells": [
+    {
+      "id": "c01",
+      "position": [
+        140.56,
+        163.82
+      ],
+      "progress": 0,
+      "links": [
+        "c02"
+      ],
+      "event": ""
+    },
+    {
+      "id": "c02",
+      "position": [
+        275.84,
+        163.82
+      ],
+      "progress": 1,
+      "links": [
+        "c03"
+      ],
+      "event": "m5_01"
+    },
+    {
+      "id": "c03",
+      "position": [
+        411.12,
+        163.82
+      ],
+      "progress": 2,
+      "links": [
+        "c04"
+      ],
+      "event": "m5_02"
+    },
+    {
+      "id": "c04",
+      "position": [
+        546.4,
+        163.82
+      ],
+      "progress": 3,
+      "links": [
+        "c05"
+      ],
+      "event": "m5_03"
+    },
+    {
+      "id": "c05",
+      "position": [
+        681.68,
+        163.82
+      ],
+      "progress": 4,
+      "links": [
+        "c06"
+      ],
+      "event": "m5_04"
+    },
+    {
+      "id": "c06",
+      "position": [
+        816.96,
+        163.82
+      ],
+      "progress": 5,
+      "links": [
+        "c07"
+      ],
+      "event": "m5_05"
+    },
+    {
+      "id": "c07",
+      "position": [
+        952.24,
+        163.82
+      ],
+      "progress": 6,
+      "links": [
+        "c08"
+      ],
+      "event": "m5_06"
+    },
+    {
+      "id": "c08",
+      "position": [
+        1087.52,
+        163.82
+      ],
+      "progress": 7,
+      "links": [
+        "c09"
+      ],
+      "event": ""
+    },
+    {
+      "id": "c09",
+      "position": [
+        1222.8,
+        163.82
+      ],
+      "progress": 8,
+      "links": [
+        "c10"
+      ],
+      "event": "m5_07"
+    },
+    {
+      "id": "c10",
+      "position": [
+        1358.08,
+        163.82
+      ],
+      "progress": 9,
+      "links": [
+        "c11"
+      ],
+      "event": "m5_08"
+    },
+    {
+      "id": "c11",
+      "position": [
+        1358.08,
+        328.34
+      ],
+      "progress": 10,
+      "links": [
+        "c12"
+      ],
+      "event": "m5_09"
+    },
+    {
+      "id": "c12",
+      "position": [
+        1222.8,
+        328.34
+      ],
+      "progress": 11,
+      "links": [
+        "c13"
+      ],
+      "event": "m5_10"
+    },
+    {
+      "id": "c13",
+      "position": [
+        1087.52,
+        328.34
+      ],
+      "progress": 12,
+      "links": [
+        "c14"
+      ],
+      "event": "m5_11"
+    },
+    {
+      "id": "c14",
+      "position": [
+        952.24,
+        328.34
+      ],
+      "progress": 13,
+      "links": [
+        "c15"
+      ],
+      "event": "m5_12"
+    },
+    {
+      "id": "c15",
+      "position": [
+        816.96,
+        328.34
+      ],
+      "progress": 14,
+      "links": [
+        "c16"
+      ],
+      "event": ""
+    },
+    {
+      "id": "c16",
+      "position": [
+        681.68,
+        328.34
+      ],
+      "progress": 15,
+      "links": [
+        "c17"
+      ],
+      "event": "m5_13"
+    },
+    {
+      "id": "c17",
+      "position": [
+        546.4,
+        328.34
+      ],
+      "progress": 16,
+      "links": [
+        "c18"
+      ],
+      "event": "m5_14"
+    },
+    {
+      "id": "c18",
+      "position": [
+        411.12,
+        328.34
+      ],
+      "progress": 17,
+      "links": [
+        "c19"
+      ],
+      "event": "m5_15"
+    },
+    {
+      "id": "c19",
+      "position": [
+        275.84,
+        328.34
+      ],
+      "progress": 18,
+      "links": [
+        "c20"
+      ],
+      "event": "m5_16"
+    },
+    {
+      "id": "c20",
+      "position": [
+        140.56,
+        328.34
+      ],
+      "progress": 19,
+      "links": [
+        "c21"
+      ],
+      "event": "m5_17"
+    },
+    {
+      "id": "c21",
+      "position": [
+        140.56,
+        492.86
+      ],
+      "progress": 20,
+      "links": [
+        "c22"
+      ],
+      "event": "m5_18"
+    },
+    {
+      "id": "c22",
+      "position": [
+        275.84,
+        492.86
+      ],
+      "progress": 21,
+      "links": [
+        "c23"
+      ],
+      "event": ""
+    },
+    {
+      "id": "c23",
+      "position": [
+        411.12,
+        492.86
+      ],
+      "progress": 22,
+      "links": [
+        "c24"
+      ],
+      "event": "m5_19"
+    },
+    {
+      "id": "c24",
+      "position": [
+        546.4,
+        492.86
+      ],
+      "progress": 23,
+      "links": [
+        "c25"
+      ],
+      "event": "m5_20"
+    },
+    {
+      "id": "c25",
+      "position": [
+        681.68,
+        492.86
+      ],
+      "progress": 24,
+      "links": [
+        "c26"
+      ],
+      "event": "m5_21"
+    },
+    {
+      "id": "c26",
+      "position": [
+        816.96,
+        492.86
+      ],
+      "progress": 25,
+      "links": [
+        "c27"
+      ],
+      "event": "m5_22"
+    },
+    {
+      "id": "c27",
+      "position": [
+        952.24,
+        492.86
+      ],
+      "progress": 26,
+      "links": [
+        "c28"
+      ],
+      "event": "m5_23"
+    },
+    {
+      "id": "c28",
+      "position": [
+        1087.52,
+        492.86
+      ],
+      "progress": 27,
+      "links": [
+        "c29"
+      ],
+      "event": "m5_24"
+    },
+    {
+      "id": "c29",
+      "position": [
+        1222.8,
+        492.86
+      ],
+      "progress": 28,
+      "links": [
+        "c30"
+      ],
+      "event": ""
+    },
+    {
+      "id": "c30",
+      "position": [
+        1358.08,
+        492.86
+      ],
+      "progress": 29,
+      "links": [
+        "c31"
+      ],
+      "event": "m5_25"
+    },
+    {
+      "id": "c31",
+      "position": [
+        1358.08,
+        657.38
+      ],
+      "progress": 30,
+      "links": [
+        "c32"
+      ],
+      "event": "m5_26"
+    },
+    {
+      "id": "c32",
+      "position": [
+        1222.8,
+        657.38
+      ],
+      "progress": 31,
+      "links": [
+        "c33"
+      ],
+      "event": "m5_27"
+    },
+    {
+      "id": "c33",
+      "position": [
+        1087.52,
+        657.38
+      ],
+      "progress": 32,
+      "links": [
+        "c34"
+      ],
+      "event": "m5_28"
+    },
+    {
+      "id": "c34",
+      "position": [
+        952.24,
+        657.38
+      ],
+      "progress": 33,
+      "links": [
+        "c35"
+      ],
+      "event": "m5_29"
+    },
+    {
+      "id": "c35",
+      "position": [
+        816.96,
+        657.38
+      ],
+      "progress": 34,
+      "links": [
+        "c36"
+      ],
+      "event": "m5_30"
+    },
+    {
+      "id": "c36",
+      "position": [
+        681.68,
+        657.38
+      ],
+      "progress": 35,
+      "links": [
+        "c37"
+      ],
+      "event": ""
+    },
+    {
+      "id": "c37",
+      "position": [
+        546.4,
+        657.38
+      ],
+      "progress": 36,
+      "links": [
+        "c38"
+      ],
+      "event": "m5_31"
+    },
+    {
+      "id": "c38",
+      "position": [
+        411.12,
+        657.38
+      ],
+      "progress": 37,
+      "links": [
+        "c39"
+      ],
+      "event": "m5_32"
+    },
+    {
+      "id": "c39",
+      "position": [
+        275.84,
+        657.38
+      ],
+      "progress": 38,
+      "links": [
+        "c40"
+      ],
+      "event": "m5_33"
+    },
+    {
+      "id": "c40",
+      "position": [
+        140.56,
+        657.38
+      ],
+      "progress": 39,
+      "links": [
+        "c41"
+      ],
+      "event": "m5_34"
+    },
+    {
+      "id": "c41",
+      "position": [
+        140.56,
+        821.9
+      ],
+      "progress": 40,
+      "links": [
+        "c42"
+      ],
+      "event": "m5_35"
+    },
+    {
+      "id": "c42",
+      "position": [
+        275.84,
+        821.9
+      ],
+      "progress": 41,
+      "links": [
+        "c43"
+      ],
+      "event": "m5_36"
+    },
+    {
+      "id": "c43",
+      "position": [
+        411.12,
+        821.9
+      ],
+      "progress": 42,
+      "links": [
+        "c44"
+      ],
+      "event": ""
+    },
+    {
+      "id": "c44",
+      "position": [
+        546.4,
+        821.9
+      ],
+      "progress": 43,
+      "links": [
+        "c45"
+      ],
+      "event": "m5_37"
+    },
+    {
+      "id": "c45",
+      "position": [
+        681.68,
+        821.9
+      ],
+      "progress": 44,
+      "links": [
+        "c46"
+      ],
+      "event": "m5_38"
+    },
+    {
+      "id": "c46",
+      "position": [
+        816.96,
+        821.9
+      ],
+      "progress": 45,
+      "links": [
+        "c47"
+      ],
+      "event": "m5_39"
+    },
+    {
+      "id": "c47",
+      "position": [
+        952.24,
+        821.9
+      ],
+      "progress": 46,
+      "links": [
+        "c48"
+      ],
+      "event": "m5_40"
+    },
+    {
+      "id": "c48",
+      "position": [
+        1087.52,
+        821.9
+      ],
+      "progress": 47,
+      "links": [
+        "c49"
+      ],
+      "event": "m5_41"
+    },
+    {
+      "id": "c49",
+      "position": [
+        1222.8,
+        821.9
+      ],
+      "progress": 48,
+      "links": [
+        "c50"
+      ],
+      "event": "m5_42"
+    },
+    {
+      "id": "c50",
+      "position": [
+        1358.08,
+        821.9
+      ],
+      "progress": 49,
+      "links": [],
+      "event": ""
+    }
+  ],
+  "connections": [
+    {
+      "a": "c23",
+      "b": "c29",
+      "flag": "bridge",
+      "via": [
+        [
+          490,
+          340
+        ],
+        [
+          765,
+          290
+        ],
+        [
+          1040,
+          340
+        ]
+      ]
+    }
+  ]
+}

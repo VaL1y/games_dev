@@ -1,0 +1,310 @@
+[gd_scene load_steps=8 format=3 uid="uid://btac381sgig3o"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="PackedScene" path="res://scenes/die.tscn" id="2_die"]
+[ext_resource type="Texture2D" path="res://assets/field.jpg" id="3_field"]
+[ext_resource type="PackedScene" path="res://scenes/event_popup.tscn" id="4_event"]
+[ext_resource type="PackedScene" path="res://scenes/player_hud.tscn" id="6_player_hud"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_modal"]
+bg_color = Color(0.055, 0.095, 0.12, 0.98)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.95, 0.67, 0.22, 0.7)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_pause_button"]
+bg_color = Color(0.055, 0.095, 0.12, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.76, 0.25, 0.72)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_main")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_field")
+expand_mode = 1
+
+[node name="TokenLayer" type="Node2D" parent="."]
+z_index = 5
+
+[node name="HUD" type="Control" parent="."]
+z_index = 10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="StatusLabel" type="Label" parent="HUD"]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 18.0
+offset_bottom = 62.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.86, 0.44, 1)
+theme_override_colors/font_outline_color = Color(0.035, 0.055, 0.065, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RollButton" type="Button" parent="HUD"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -165.0
+offset_top = -88.0
+offset_right = 165.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 0
+theme_override_font_sizes/font_size = 24
+text = "Бросить кость [Пробел]"
+
+[node name="PauseButton" type="Button" parent="HUD"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -142.0
+offset_top = 28.0
+offset_right = -32.0
+offset_bottom = 78.0
+grow_horizontal = 0
+mouse_filter = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBox_pause_button")
+text = "Меню  Esc"
+
+[node name="PlayerTopLeft" parent="HUD" instance=ExtResource("6_player_hud")]
+layout_mode = 1
+offset_left = 38.0
+offset_top = 120.0
+offset_right = 308.0
+offset_bottom = 240.0
+
+[node name="PlayerTopRight" parent="HUD" instance=ExtResource("6_player_hud")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -308.0
+offset_top = 120.0
+offset_right = -38.0
+offset_bottom = 240.0
+grow_horizontal = 0
+
+[node name="PlayerBottomLeft" parent="HUD" instance=ExtResource("6_player_hud")]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = -240.0
+offset_right = 308.0
+offset_bottom = -120.0
+grow_vertical = 0
+
+[node name="PlayerBottomRight" parent="HUD" instance=ExtResource("6_player_hud")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -308.0
+offset_top = -240.0
+offset_right = -38.0
+offset_bottom = -120.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="DiceOverlay" type="CenterContainer" parent="."]
+visible = false
+z_index = 20
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DiceOverlay"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="DiceRow" type="HBoxContainer" parent="DiceOverlay/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Die" parent="DiceOverlay/VBoxContainer/DiceRow" instance=ExtResource("2_die")]
+layout_mode = 2
+
+[node name="ResultLabel" type="Label" parent="DiceOverlay/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.86, 0.44, 1)
+theme_override_colors/font_outline_color = Color(0.05, 0.07, 0.09, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 30
+text = "Бросаем..."
+horizontal_alignment = 1
+
+[node name="RollSound" type="AudioStreamPlayer" parent="."]
+volume_db = -5.0
+
+[node name="EventPopup" parent="." instance=ExtResource("4_event")]
+z_index = 25
+layout_mode = 1
+
+[node name="VictoryOverlay" type="Control" parent="."]
+visible = false
+z_index = 30
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Shade" type="ColorRect" parent="VictoryOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.015, 0.025, 0.03, 0.78)
+
+[node name="CenterContainer" type="CenterContainer" parent="VictoryOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VictoryOverlay/CenterContainer"]
+custom_minimum_size = Vector2(580, 280)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBox_modal")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VictoryOverlay/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 28
+alignment = 1
+
+[node name="VictoryLabel" type="Label" parent="VictoryOverlay/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.76, 0.25, 1)
+theme_override_font_sizes/font_size = 44
+text = "Победил!"
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="VictoryOverlay/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Начать заново"
+
+[node name="MenuButton" type="Button" parent="VictoryOverlay/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Вернуться в меню"
+
+[node name="PauseOverlay" type="Control" parent="."]
+visible = false
+z_index = 30
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Shade" type="ColorRect" parent="PauseOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+color = Color(0.015, 0.025, 0.03, 0.78)
+
+[node name="CenterContainer" type="CenterContainer" parent="PauseOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PauseOverlay/CenterContainer"]
+custom_minimum_size = Vector2(520, 360)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBox_modal")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseOverlay/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Title" type="Label" parent="PauseOverlay/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.76, 0.25, 1)
+theme_override_font_sizes/font_size = 42
+text = "Пауза"
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="PauseOverlay/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Продолжить"
+
+[node name="RestartButton" type="Button" parent="PauseOverlay/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Начать заново"
+
+[node name="MenuButton" type="Button" parent="PauseOverlay/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Вернуться в меню"

@@ -1,0 +1,71 @@
+[gd_scene format=3]
+
+[node name="SetupOverlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Shade" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.015, 0.025, 0.03, 0.86)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(680, 410)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.76, 0.25, 1)
+theme_override_font_sizes/font_size = 46
+text = "Лабиринт с костями"
+horizontal_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Выберите количество игроков"
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TwoPlayers" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(160, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "2 игрока"
+
+[node name="ThreePlayers" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(160, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "3 игрока"
+
+[node name="FourPlayers" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(160, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "4 игрока"

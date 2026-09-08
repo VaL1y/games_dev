@@ -1,0 +1,33 @@
+{
+  "image_size": [1304, 739],
+  "cells": [
+	{"position": [126, 368], "event": null},
+	{"position": [201, 368], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}},
+	{"position": [201, 291], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}},
+	{"position": [279, 291], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}},
+	{"position": [356, 290], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}},
+	{"position": [356, 368], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}},
+	{"position": [356, 446], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}},
+	{"position": [356, 524], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}},
+	{"position": [356, 601], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}},
+	{"position": [356, 679], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}},
+	{"position": [434, 679], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}},
+	{"position": [510, 679], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}},
+	{"position": [510, 601], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}},
+	{"position": [510, 524], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}},
+	{"position": [588, 524], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}},
+	{"position": [664, 524], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}},
+	{"position": [664, 601], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}},
+	{"position": [664, 679], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}},
+	{"position": [742, 679], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}},
+	{"position": [819, 679], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}},
+	{"position": [819, 601], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}},
+	{"position": [819, 524], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}},
+	{"position": [896, 524], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}},
+	{"position": [973, 524], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}},
+	{"position": [973, 446], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}},
+	{"position": [973, 368], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}},
+	{"position": [1050, 368], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}},
+	{"position": [1127, 368], "event": {"type": "press_key", "time_limit": 30.0, "on_timeout": "rollback_move"}}
+  ]
+}

@@ -1,0 +1,618 @@
+{
+  "id": "04_darkness",
+  "image": "background.png",
+  "image_size": [
+    1536,
+    1024
+  ],
+  "hit_radius": 34,
+  "start": "c01",
+  "exit": "c50",
+  "intro": "intro_4",
+  "goal": "goal_4",
+  "outro": "exit_4",
+  "dark": true,
+  "cells": [
+    {
+      "id": "c01",
+      "position": [
+        133.44,
+        127.26
+      ],
+      "progress": 0,
+      "links": [
+        "c02"
+      ],
+      "event": ""
+    },
+    {
+      "id": "c02",
+      "position": [
+        272.99,
+        127.26
+      ],
+      "progress": 1,
+      "links": [
+        "c03"
+      ],
+      "event": "m4_01"
+    },
+    {
+      "id": "c03",
+      "position": [
+        412.54,
+        127.26
+      ],
+      "progress": 2,
+      "links": [
+        "c04"
+      ],
+      "event": "m4_02"
+    },
+    {
+      "id": "c04",
+      "position": [
+        552.1,
+        127.26
+      ],
+      "progress": 3,
+      "links": [
+        "c05"
+      ],
+      "event": "m4_03"
+    },
+    {
+      "id": "c05",
+      "position": [
+        691.65,
+        127.26
+      ],
+      "progress": 4,
+      "links": [
+        "c06"
+      ],
+      "event": "m4_04"
+    },
+    {
+      "id": "c06",
+      "position": [
+        831.2,
+        127.26
+      ],
+      "progress": 5,
+      "links": [
+        "c07"
+      ],
+      "event": "m4_05"
+    },
+    {
+      "id": "c07",
+      "position": [
+        970.75,
+        127.26
+      ],
+      "progress": 6,
+      "links": [
+        "c08"
+      ],
+      "event": "m4_06"
+    },
+    {
+      "id": "c08",
+      "position": [
+        1110.3,
+        127.26
+      ],
+      "progress": 7,
+      "links": [
+        "c09"
+      ],
+      "event": ""
+    },
+    {
+      "id": "c09",
+      "position": [
+        1249.86,
+        127.26
+      ],
+      "progress": 8,
+      "links": [
+        "c10",
+        "c15"
+      ],
+      "event": "m4_07"
+    },
+    {
+      "id": "c10",
+      "position": [
+        1329.6,
+        273.5
+      ],
+      "progress": 9,
+      "links": [
+        "c11"
+      ],
+      "event": "m4_08"
+    },
+    {
+      "id": "c11",
+      "position": [
+        1101.76,
+        273.5
+      ],
+      "progress": 10,
+      "links": [
+        "c12"
+      ],
+      "event": "m4_09"
+    },
+    {
+      "id": "c12",
+      "position": [
+        873.92,
+        273.5
+      ],
+      "progress": 11,
+      "links": [
+        "c13"
+      ],
+      "event": "m4_10"
+    },
+    {
+      "id": "c13",
+      "position": [
+        646.08,
+        273.5
+      ],
+      "progress": 12,
+      "links": [
+        "c14"
+      ],
+      "event": "m4_11"
+    },
+    {
+      "id": "c14",
+      "position": [
+        418.24,
+        273.5
+      ],
+      "progress": 13,
+      "links": [
+        "c19"
+      ],
+      "event": "m4_12"
+    },
+    {
+      "id": "c15",
+      "position": [
+        1215.68,
+        401.46
+      ],
+      "progress": 14,
+      "links": [
+        "c16"
+      ],
+      "event": ""
+    },
+    {
+      "id": "c16",
+      "position": [
+        987.84,
+        401.46
+      ],
+      "progress": 15,
+      "links": [
+        "c17"
+      ],
+      "event": "m4_13"
+    },
+    {
+      "id": "c17",
+      "position": [
+        760.0,
+        401.46
+      ],
+      "progress": 16,
+      "links": [
+        "c18"
+      ],
+      "event": "m4_14"
+    },
+    {
+      "id": "c18",
+      "position": [
+        532.16,
+        401.46
+      ],
+      "progress": 17,
+      "links": [
+        "c19"
+      ],
+      "event": "m4_15"
+    },
+    {
+      "id": "c19",
+      "position": [
+        190.4,
+        529.42
+      ],
+      "progress": 18,
+      "links": [
+        "c20"
+      ],
+      "event": "m4_16"
+    },
+    {
+      "id": "c20",
+      "position": [
+        361.28,
+        529.42
+      ],
+      "progress": 19,
+      "links": [
+        "c21"
+      ],
+      "event": "m4_17"
+    },
+    {
+      "id": "c21",
+      "position": [
+        532.16,
+        529.42
+      ],
+      "progress": 20,
+      "links": [
+        "c22"
+      ],
+      "event": "m4_18"
+    },
+    {
+      "id": "c22",
+      "position": [
+        703.04,
+        529.42
+      ],
+      "progress": 21,
+      "links": [
+        "c23"
+      ],
+      "event": ""
+    },
+    {
+      "id": "c23",
+      "position": [
+        873.92,
+        529.42
+      ],
+      "progress": 22,
+      "links": [
+        "c24"
+      ],
+      "event": "m4_19"
+    },
+    {
+      "id": "c24",
+      "position": [
+        1044.8,
+        529.42
+      ],
+      "progress": 23,
+      "links": [
+        "c25"
+      ],
+      "event": "m4_20"
+    },
+    {
+      "id": "c25",
+      "position": [
+        1215.68,
+        529.42
+      ],
+      "progress": 24,
+      "links": [
+        "c26",
+        "c31"
+      ],
+      "event": "m4_21"
+    },
+    {
+      "id": "c26",
+      "position": [
+        1343.84,
+        666.52
+      ],
+      "progress": 25,
+      "links": [
+        "c27"
+      ],
+      "event": "m4_22"
+    },
+    {
+      "id": "c27",
+      "position": [
+        1116.0,
+        666.52
+      ],
+      "progress": 26,
+      "links": [
+        "c28"
+      ],
+      "event": "m4_23"
+    },
+    {
+      "id": "c28",
+      "position": [
+        888.16,
+        666.52
+      ],
+      "progress": 27,
+      "links": [
+        "c29"
+      ],
+      "event": "m4_24"
+    },
+    {
+      "id": "c29",
+      "position": [
+        660.32,
+        666.52
+      ],
+      "progress": 28,
+      "links": [
+        "c30"
+      ],
+      "event": ""
+    },
+    {
+      "id": "c30",
+      "position": [
+        432.48,
+        666.52
+      ],
+      "progress": 29,
+      "links": [
+        "c35"
+      ],
+      "event": "m4_25"
+    },
+    {
+      "id": "c31",
+      "position": [
+        1215.68,
+        785.34
+      ],
+      "progress": 30,
+      "links": [
+        "c32"
+      ],
+      "event": "m4_26"
+    },
+    {
+      "id": "c32",
+      "position": [
+        987.84,
+        785.34
+      ],
+      "progress": 31,
+      "links": [
+        "c33"
+      ],
+      "event": "m4_27"
+    },
+    {
+      "id": "c33",
+      "position": [
+        760.0,
+        785.34
+      ],
+      "progress": 32,
+      "links": [
+        "c34"
+      ],
+      "event": "m4_28"
+    },
+    {
+      "id": "c34",
+      "position": [
+        532.16,
+        785.34
+      ],
+      "progress": 33,
+      "links": [
+        "c35"
+      ],
+      "event": "m4_29"
+    },
+    {
+      "id": "c35",
+      "position": [
+        119.2,
+        904.16
+      ],
+      "progress": 34,
+      "links": [
+        "c36"
+      ],
+      "event": "m4_30"
+    },
+    {
+      "id": "c36",
+      "position": [
+        290.08,
+        904.16
+      ],
+      "progress": 35,
+      "links": [
+        "c37"
+      ],
+      "event": ""
+    },
+    {
+      "id": "c37",
+      "position": [
+        460.96,
+        904.16
+      ],
+      "progress": 36,
+      "links": [
+        "c38"
+      ],
+      "event": "m4_31"
+    },
+    {
+      "id": "c38",
+      "position": [
+        631.84,
+        904.16
+      ],
+      "progress": 37,
+      "links": [
+        "c39"
+      ],
+      "event": "m4_32"
+    },
+    {
+      "id": "c39",
+      "position": [
+        802.72,
+        904.16
+      ],
+      "progress": 38,
+      "links": [
+        "c40"
+      ],
+      "event": "m4_33"
+    },
+    {
+      "id": "c40",
+      "position": [
+        973.6,
+        904.16
+      ],
+      "progress": 39,
+      "links": [
+        "c41"
+      ],
+      "event": "m4_34"
+    },
+    {
+      "id": "c41",
+      "position": [
+        1144.48,
+        904.16
+      ],
+      "progress": 40,
+      "links": [
+        "c42"
+      ],
+      "event": "m4_35"
+    },
+    {
+      "id": "c42",
+      "position": [
+        1315.36,
+        904.16
+      ],
+      "progress": 41,
+      "links": [
+        "c43"
+      ],
+      "event": "m4_36"
+    },
+    {
+      "id": "c43",
+      "position": [
+        1443.52,
+        867.6
+      ],
+      "progress": 42,
+      "links": [
+        "c44"
+      ],
+      "event": ""
+    },
+    {
+      "id": "c44",
+      "position": [
+        1443.52,
+        771.63
+      ],
+      "progress": 43,
+      "links": [
+        "c45"
+      ],
+      "event": "m4_37"
+    },
+    {
+      "id": "c45",
+      "position": [
+        1443.52,
+        675.66
+      ],
+      "progress": 44,
+      "links": [
+        "c46"
+      ],
+      "event": "m4_38"
+    },
+    {
+      "id": "c46",
+      "position": [
+        1443.52,
+        579.69
+      ],
+      "progress": 45,
+      "links": [
+        "c47"
+      ],
+      "event": "m4_39"
+    },
+    {
+      "id": "c47",
+      "position": [
+        1443.52,
+        483.72
+      ],
+      "progress": 46,
+      "links": [
+        "c48"
+      ],
+      "event": "m4_40"
+    },
+    {
+      "id": "c48",
+      "position": [
+        1443.52,
+        387.75
+      ],
+      "progress": 47,
+      "links": [
+        "c49"
+      ],
+      "event": "m4_41"
+    },
+    {
+      "id": "c49",
+      "position": [
+        1443.52,
+        291.78
+      ],
+      "progress": 48,
+      "links": [
+        "c50"
+      ],
+      "event": "m4_42"
+    },
+    {
+      "id": "c50",
+      "position": [
+        1443.52,
+        195.81
+      ],
+      "progress": 49,
+      "links": [],
+      "event": ""
+    }
+  ],
+  "connections": []
+}

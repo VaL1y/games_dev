@@ -1,0 +1,152 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/arcade_setup.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://scenes/player_setup_row.tscn" id="2_row"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_panel"]
+bg_color = Color(0.045, 0.085, 0.11, 0.98)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.76, 0.25, 0.6)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 0.5)
+shadow_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_count"]
+bg_color = Color(0.075, 0.16, 0.21, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.55, 0.72, 0.8, 0.6)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_start"]
+bg_color = Color(0.12, 0.32, 0.44, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.76, 0.25, 0.8)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[node name="ArcadeSetup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.035, 0.065, 0.08, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(760, 660)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBox_panel")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Title" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.76, 0.25, 1)
+theme_override_font_sizes/font_size = 42
+text = "Аркада"
+horizontal_alignment = 1
+
+[node name="CountLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Игроков в партии: 1"
+horizontal_alignment = 1
+
+[node name="CountButtons" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="One" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/CountButtons"]
+custom_minimum_size = Vector2(110, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBox_count")
+text = "1"
+
+[node name="Two" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/CountButtons"]
+custom_minimum_size = Vector2(110, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBox_count")
+text = "2"
+
+[node name="Three" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/CountButtons"]
+custom_minimum_size = Vector2(110, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBox_count")
+text = "3"
+
+[node name="Four" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/CountButtons"]
+custom_minimum_size = Vector2(110, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBox_count")
+text = "4"
+
+[node name="Players" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Player1" parent="CenterContainer/PanelContainer/VBoxContainer/Players" instance=ExtResource("2_row")]
+layout_mode = 2
+
+[node name="Player2" parent="CenterContainer/PanelContainer/VBoxContainer/Players" instance=ExtResource("2_row")]
+layout_mode = 2
+
+[node name="Player3" parent="CenterContainer/PanelContainer/VBoxContainer/Players" instance=ExtResource("2_row")]
+layout_mode = 2
+
+[node name="Player4" parent="CenterContainer/PanelContainer/VBoxContainer/Players" instance=ExtResource("2_row")]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 58)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBox_start")
+text = "Начать аркаду"
+
+[node name="BackButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Назад"

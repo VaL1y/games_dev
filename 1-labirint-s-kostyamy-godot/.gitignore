@@ -1,0 +1,10 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Local playtest output (test scripts remain versioned).
+/tests/*.png
+/tests/*.png.import
+/tests/*.log
+/tests/*save.json
+/tests/*save.json.tmp

@@ -1,0 +1,11 @@
+{
+  "book": "BOOK.md",
+  "maps": [
+    "maps/01_terraces/map.json",
+    "maps/02_crossroads/map.json",
+    "maps/03_flooded/map.json",
+    "maps/04_darkness/map.json",
+    "maps/05_workshop/map.json",
+    "maps/06_treasury/map.json"
+  ]
+}
