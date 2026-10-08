@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/player_card.gd" id="1"]
+
+[sub_resource type="StyleBoxFlat" id="PanelStyle"]
+bg_color = Color(1, 1, 1, 0.88)
+border_color = Color(0.78, 0.75, 0.83, 1.0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+content_margin_left = 16.0
+content_margin_top = 12.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+
+[node name="PlayerCard" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 160)
+theme_override_styles/panel = SubResource("PanelStyle")
+script = ExtResource("1")
+
+[node name="Content" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Avatar" type="Label" parent="Content"]
+custom_minimum_size = Vector2(0, 76)
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "●"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerName" type="Label" parent="Content"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Игрок"
+horizontal_alignment = 1
+
+[node name="Area" type="Label" parent="Content"]
+layout_mode = 2
+text = "Территория: 0 клеток"
+horizontal_alignment = 1

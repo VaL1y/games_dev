@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbygpt17av7b6"]
+
+[ext_resource type="Script" uid="uid://bx28nxal8u0r" path="res://scripts/dice_pair.gd" id="1_w4d0d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jc6he"]
+bg_color = Color(0.7439047, 0.7343954, 0.7724328, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 4
+
+[node name="DicePair" type="VBoxContainer" unique_id=1560179335]
+custom_minimum_size = Vector2(220, 160)
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+script = ExtResource("1_w4d0d")
+
+[node name="Title" type="Label" parent="." unique_id=986350273]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Нажми сюда / пробел"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Faces" type="HBoxContainer" parent="." unique_id=2080118615]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="FFrame" type="PanelContainer" parent="Faces" unique_id=982292771]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jc6he")
+
+[node name="First" type="Label" parent="Faces/FFrame" unique_id=1680182488]
+custom_minimum_size = Vector2(95, 95)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFrame" type="PanelContainer" parent="Faces" unique_id=798944146]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jc6he")
+
+[node name="Second" type="Label" parent="Faces/SFrame" unique_id=1430030536]
+custom_minimum_size = Vector2(95, 95)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1

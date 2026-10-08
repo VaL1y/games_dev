@@ -1,0 +1,128 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/settings_screen.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/фон2.png" id="2"]
+
+[sub_resource type="StyleBoxFlat" id="PanelStyle"]
+bg_color = Color(1, 1, 1, 0.90)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+content_margin_left = 34.0
+content_margin_top = 28.0
+content_margin_right = 34.0
+content_margin_bottom = 28.0
+
+[node name="SettingsScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+custom_minimum_size = Vector2(720, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("PanelStyle")
+
+[node name="Scroll" type="ScrollContainer" parent="Center/Panel"]
+custom_minimum_size = Vector2(0, 640)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="Content" type="VBoxContainer" parent="Center/Panel/Scroll"]
+size_flags_horizontal = 3
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="Center/Panel/Scroll/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27, 0.18, 0.4, 1)
+theme_override_font_sizes/font_size = 40
+text = "Настройки"
+horizontal_alignment = 1
+
+[node name="WindowSizeLabel" type="Label" parent="Center/Panel/Scroll/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27, 0.18, 0.4, 1)
+text = "Размер окна"
+
+[node name="WindowSize" type="OptionButton" parent="Center/Panel/Scroll/Content"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="ApplyWindowSize" type="Button" parent="Center/Panel/Scroll/Content"]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+text = "Применить размер окна"
+tooltip_text = "Окно выйдет из закреплённого режима и будет центрировано перед изменением размера."
+
+[node name="RenderResolutionLabel" type="Label" parent="Center/Panel/Scroll/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27, 0.18, 0.4, 1)
+text = "Разрешение рендеринга"
+
+[node name="RenderResolution" type="OptionButton" parent="Center/Panel/Scroll/Content"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="ApplyRenderResolution" type="Button" parent="Center/Panel/Scroll/Content"]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+text = "Применить разрешение"
+tooltip_text = "Меняет внутренний размер 2D-изображения. При низком значении картинка может стать мягче."
+
+[node name="Fullscreen" type="CheckBox" parent="Center/Panel/Scroll/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27, 0.18, 0.4, 1)
+text = "Полноэкранный режим"
+
+[node name="MusicLabel" type="Label" parent="Center/Panel/Scroll/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27, 0.18, 0.4, 1)
+text = "Громкость музыки"
+
+[node name="MusicSlider" type="HSlider" parent="Center/Panel/Scroll/Content"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+max_value = 100.0
+value = 50.0
+
+[node name="EffectsLabel" type="Label" parent="Center/Panel/Scroll/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27, 0.18, 0.4, 1)
+text = "Громкость эффектов"
+
+[node name="EffectsSlider" type="HSlider" parent="Center/Panel/Scroll/Content"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+max_value = 100.0
+value = 50.0
+
+[node name="Back" type="Button" parent="Center/Panel/Scroll/Content"]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+text = "Назад"

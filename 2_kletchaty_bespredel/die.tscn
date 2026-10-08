@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://bcsw1otswggob"]
-
-[node name="die" type="Button" unique_id=508140412]
-offset_right = 37.0
-offset_bottom = 33.0
-text = "1"

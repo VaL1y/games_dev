@@ -1,0 +1,161 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/game_screen.gd" id="1"]
+[ext_resource type="PackedScene" path="res://board.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://dice_pair.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://player_card.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://piece_preview.tscn" id="5"]
+[ext_resource type="Texture2D" path="res://assets/фон2.png" id="6"]
+
+[node name="GameScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 38
+
+[node name="MainColumn" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Header" type="HBoxContainer" parent="Margin/MainColumn"]
+custom_minimum_size = Vector2(0, 58)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Pause" type="Button" parent="Margin/MainColumn/Header"]
+custom_minimum_size = Vector2(150, 54)
+layout_mode = 2
+text = "Пауза"
+
+[node name="Settings" type="Button" parent="Margin/MainColumn/Header"]
+custom_minimum_size = Vector2(150, 54)
+layout_mode = 2
+text = "Настройки"
+
+[node name="Turn" type="Label" parent="Margin/MainColumn/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.27, 0.18, 0.4, 1)
+theme_override_font_sizes/font_size = 28
+text = "Ход игрока"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Restart" type="Button" parent="Margin/MainColumn/Header"]
+custom_minimum_size = Vector2(210, 54)
+layout_mode = 2
+text = "Начать сначала"
+
+[node name="ChangeBoard" type="Button" parent="Margin/MainColumn/Header"]
+custom_minimum_size = Vector2(185, 54)
+layout_mode = 2
+text = "Сменить поле"
+
+[node name="Body" type="HBoxContainer" parent="Margin/MainColumn"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 18
+
+[node name="LeftColumn" type="VBoxContainer" parent="Margin/MainColumn/Body"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="PlayerOne" parent="Margin/MainColumn/Body/LeftColumn" instance=ExtResource("4")]
+layout_mode = 2
+
+[node name="LeftSpacer" type="Control" parent="Margin/MainColumn/Body/LeftColumn"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DicePair" parent="Margin/MainColumn/Body/LeftColumn" instance=ExtResource("3")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Status" type="Label" parent="Margin/MainColumn/Body/LeftColumn"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27, 0.18, 0.4, 1)
+autowrap_mode = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BoardAspect" type="AspectRatioContainer" parent="Margin/MainColumn/Body"]
+custom_minimum_size = Vector2(420, 420)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+ratio = 1.0
+
+[node name="GameBoard" parent="Margin/MainColumn/Body/BoardAspect" instance=ExtResource("2")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RightColumn" type="VBoxContainer" parent="Margin/MainColumn/Body"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="PlayerTwo" parent="Margin/MainColumn/Body/RightColumn" instance=ExtResource("4")]
+layout_mode = 2
+
+[node name="RightSpacer" type="Control" parent="Margin/MainColumn/Body/RightColumn"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PreviewTitle" type="Label" parent="Margin/MainColumn/Body/RightColumn"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27, 0.18, 0.4, 1)
+theme_override_font_sizes/font_size = 22
+text = "Полученная фигура"
+horizontal_alignment = 1
+
+[node name="PiecePreview" parent="Margin/MainColumn/Body/RightColumn" instance=ExtResource("5")]
+layout_mode = 2
+
+[node name="PreviewHint" type="Label" parent="Margin/MainColumn/Body/RightColumn"]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27, 0.18, 0.4, 1)
+text = "Бросьте кости"
+autowrap_mode = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rotate" type="Button" parent="Margin/MainColumn/Body/RightColumn"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+text = "Повернуть (Q)"
+
+[node name="Confirm" type="Button" parent="Margin/MainColumn/Body/RightColumn"]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+text = "Подтвердить ход"

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bjo7ryqg2wfsq"]
+
+[ext_resource type="Script" uid="uid://bjn7fax83tlck" path="res://scripts/board.gd" id="1_p0ybc"]
+
+[node name="GameBoard" type="Control" unique_id=589304634]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 250.0
+offset_bottom = 250.0
+script = ExtResource("1_p0ybc")
