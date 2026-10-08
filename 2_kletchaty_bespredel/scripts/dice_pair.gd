@@ -54,6 +54,13 @@ func _roll() -> void:
 	tween.finished.connect(func() -> void: _animating = false)
 
 
-func _process(_delta: float) -> void:
-	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and not Input.is_key_pressed(KEY_SPACE):
+
+func _input(event: InputEvent) -> void:
+	if (
+		event is InputEventMouseButton
+		and event.button_index == MOUSE_BUTTON_LEFT
+		and not event.pressed
+	):
+		_roll_locked = false
+	elif event is InputEventKey and event.keycode == KEY_SPACE and not event.pressed:
 		_roll_locked = false

@@ -1,0 +1,114 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/player_setup_card.gd" id="1"]
+
+[sub_resource type="StyleBoxFlat" id="CardStyle"]
+bg_color = Color(1, 1, 1, 0.72)
+border_color = Color(0.78, 0.75, 0.83, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+
+[node name="PlayerSetupCard" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 194)
+theme_override_styles/panel = SubResource("CardStyle")
+script = ExtResource("1")
+
+[node name="Content" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Title" type="Label" parent="Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27, 0.18, 0.4, 1)
+theme_override_font_sizes/font_size = 21
+text = "Игрок"
+horizontal_alignment = 1
+
+[node name="Name" type="LineEdit" parent="Content"]
+custom_minimum_size = Vector2(0, 38)
+layout_mode = 2
+placeholder_text = "Имя игрока"
+
+[node name="AvatarLabel" type="Label" parent="Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27, 0.18, 0.4, 1)
+text = "Аватар"
+
+[node name="AvatarRow" type="HBoxContainer" parent="Content"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="AvatarOne" type="TextureButton" parent="Content/AvatarRow"]
+custom_minimum_size = Vector2(40, 40)
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="AvatarTwo" type="TextureButton" parent="Content/AvatarRow"]
+custom_minimum_size = Vector2(40, 40)
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="AvatarThree" type="TextureButton" parent="Content/AvatarRow"]
+custom_minimum_size = Vector2(40, 40)
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="AvatarFour" type="TextureButton" parent="Content/AvatarRow"]
+custom_minimum_size = Vector2(40, 40)
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="AvatarFive" type="TextureButton" parent="Content/AvatarRow"]
+custom_minimum_size = Vector2(40, 40)
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="ColorRow" type="HBoxContainer" parent="Content"]
+layout_mode = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="ColorLabel" type="Label" parent="Content/ColorRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27, 0.18, 0.4, 1)
+text = "Цвет"
+vertical_alignment = 1
+
+[node name="ColorOne" type="Button" parent="Content/ColorRow"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="ColorTwo" type="Button" parent="Content/ColorRow"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="ColorThree" type="Button" parent="Content/ColorRow"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="ColorFour" type="Button" parent="Content/ColorRow"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="ColorFive" type="Button" parent="Content/ColorRow"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="ColorSix" type="Button" parent="Content/ColorRow"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="ColorSeven" type="Button" parent="Content/ColorRow"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2

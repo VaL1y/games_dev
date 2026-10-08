@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/ui/setup_screen.gd" id="1"]
 [ext_resource type="Texture2D" path="res://assets/фон2.png" id="2"]
-[ext_resource type="PackedScene" path="res://color_preview.tscn" id="3"]
 
 [sub_resource type="StyleBoxFlat" id="PanelStyle"]
 bg_color = Color(1, 1, 1, 0.90)
@@ -10,10 +9,10 @@ corner_radius_top_left = 24
 corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
-content_margin_left = 30.0
-content_margin_top = 24.0
-content_margin_right = 30.0
-content_margin_bottom = 24.0
+content_margin_left = 28.0
+content_margin_top = 20.0
+content_margin_right = 28.0
+content_margin_bottom = 20.0
 
 [node name="SetupScreen" type="Control"]
 layout_mode = 3
@@ -45,119 +44,81 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Panel" type="PanelContainer" parent="Center"]
-custom_minimum_size = Vector2(900, 0)
+custom_minimum_size = Vector2(1080, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("PanelStyle")
 
 [node name="Content" type="VBoxContainer" parent="Center/Panel"]
 layout_mode = 2
-theme_override_constants/separation = 12
+theme_override_constants/separation = 8
 
 [node name="Title" type="Label" parent="Center/Panel/Content"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.27, 0.18, 0.4, 1)
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 34
 text = "Новая партия"
 horizontal_alignment = 1
 
-[node name="Description" type="Label" parent="Center/Panel/Content"]
+[node name="SettingsRow" type="HBoxContainer" parent="Center/Panel/Content"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.27, 0.18, 0.4, 1)
-theme_override_font_sizes/font_size = 22
-text = "Выберите размер поля и настройте игроков."
-horizontal_alignment = 1
+theme_override_constants/separation = 16
 
-[node name="BoardSizeLabel" type="Label" parent="Center/Panel/Content"]
+[node name="BoardSizeGroup" type="VBoxContainer" parent="Center/Panel/Content/SettingsRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="BoardSizeLabel" type="Label" parent="Center/Panel/Content/SettingsRow/BoardSizeGroup"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.27, 0.18, 0.4, 1)
-theme_override_font_sizes/font_size = 24
 text = "Размер поля"
 
-[node name="BoardSize" type="OptionButton" parent="Center/Panel/Content"]
-custom_minimum_size = Vector2(0, 48)
+[node name="BoardSize" type="OptionButton" parent="Center/Panel/Content/SettingsRow/BoardSizeGroup"]
+custom_minimum_size = Vector2(0, 42)
 layout_mode = 2
 
-[node name="Players" type="HBoxContainer" parent="Center/Panel/Content"]
-layout_mode = 2
-theme_override_constants/separation = 24
-
-[node name="PlayerOne" type="VBoxContainer" parent="Center/Panel/Content/Players"]
+[node name="PlayerCountGroup" type="VBoxContainer" parent="Center/Panel/Content/SettingsRow"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 8
+theme_override_constants/separation = 4
 
-[node name="PlayerOneTitle" type="Label" parent="Center/Panel/Content/Players/PlayerOne"]
+[node name="PlayerCountLabel" type="Label" parent="Center/Panel/Content/SettingsRow/PlayerCountGroup"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.27, 0.18, 0.4, 1)
-theme_override_font_sizes/font_size = 27
-text = "Игрок 1"
-horizontal_alignment = 1
+text = "Количество игроков"
 
-[node name="Name" type="LineEdit" parent="Center/Panel/Content/Players/PlayerOne"]
-custom_minimum_size = Vector2(0, 48)
-layout_mode = 2
-placeholder_text = "Имя"
-
-[node name="AvatarLabel" type="Label" parent="Center/Panel/Content/Players/PlayerOne"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.27, 0.18, 0.4, 1)
-text = "Аватар"
-
-[node name="Avatar" type="OptionButton" parent="Center/Panel/Content/Players/PlayerOne"]
-custom_minimum_size = Vector2(0, 48)
+[node name="PlayerCount" type="OptionButton" parent="Center/Panel/Content/SettingsRow/PlayerCountGroup"]
+custom_minimum_size = Vector2(0, 42)
 layout_mode = 2
 
-[node name="ColorLabel" type="Label" parent="Center/Panel/Content/Players/PlayerOne"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.27, 0.18, 0.4, 1)
-text = "Цвет территории"
-
-[node name="Color" type="ColorPickerButton" parent="Center/Panel/Content/Players/PlayerOne"]
-custom_minimum_size = Vector2(0, 48)
-layout_mode = 2
-
-[node name="ColorPreview" parent="Center/Panel/Content/Players/PlayerOne" instance=ExtResource("3")]
-layout_mode = 2
-
-[node name="PlayerTwo" type="VBoxContainer" parent="Center/Panel/Content/Players"]
+[node name="RuleGroup" type="VBoxContainer" parent="Center/Panel/Content/SettingsRow"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 8
+theme_override_constants/separation = 4
 
-[node name="PlayerTwoTitle" type="Label" parent="Center/Panel/Content/Players/PlayerTwo"]
+[node name="RuleLabel" type="Label" parent="Center/Panel/Content/SettingsRow/RuleGroup"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.27, 0.18, 0.4, 1)
-theme_override_font_sizes/font_size = 27
-text = "Игрок 2"
-horizontal_alignment = 1
+text = "Правило территории"
 
-[node name="Name" type="LineEdit" parent="Center/Panel/Content/Players/PlayerTwo"]
-custom_minimum_size = Vector2(0, 48)
-layout_mode = 2
-placeholder_text = "Имя"
-
-[node name="AvatarLabel" type="Label" parent="Center/Panel/Content/Players/PlayerTwo"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.27, 0.18, 0.4, 1)
-text = "Аватар"
-
-[node name="Avatar" type="OptionButton" parent="Center/Panel/Content/Players/PlayerTwo"]
-custom_minimum_size = Vector2(0, 48)
+[node name="RuleMode" type="OptionButton" parent="Center/Panel/Content/SettingsRow/RuleGroup"]
+custom_minimum_size = Vector2(0, 42)
 layout_mode = 2
 
-[node name="ColorLabel" type="Label" parent="Center/Panel/Content/Players/PlayerTwo"]
+[node name="PlayersScroll" type="ScrollContainer" parent="Center/Panel/Content"]
+custom_minimum_size = Vector2(0, 360)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.27, 0.18, 0.4, 1)
-text = "Цвет территории"
+horizontal_scroll_mode = 0
 
-[node name="Color" type="ColorPickerButton" parent="Center/Panel/Content/Players/PlayerTwo"]
-custom_minimum_size = Vector2(0, 48)
+[node name="PlayersGrid" type="GridContainer" parent="Center/Panel/Content/PlayersScroll"]
 layout_mode = 2
-
-[node name="ColorPreview" parent="Center/Panel/Content/Players/PlayerTwo" instance=ExtResource("3")]
-layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 8
+columns = 2
 
 [node name="Message" type="Label" parent="Center/Panel/Content"]
+custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.7, 0.15, 0.25, 1)
 horizontal_alignment = 1
@@ -168,11 +129,11 @@ theme_override_constants/separation = 16
 alignment = 2
 
 [node name="Back" type="Button" parent="Center/Panel/Content/Actions"]
-custom_minimum_size = Vector2(180, 54)
+custom_minimum_size = Vector2(180, 48)
 layout_mode = 2
 text = "Назад"
 
 [node name="Start" type="Button" parent="Center/Panel/Content/Actions"]
-custom_minimum_size = Vector2(220, 54)
+custom_minimum_size = Vector2(220, 48)
 layout_mode = 2
 text = "Начать игру"

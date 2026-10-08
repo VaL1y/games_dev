@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://scripts/ui/game_screen.gd" id="1"]
 [ext_resource type="PackedScene" path="res://board.tscn" id="2"]
 [ext_resource type="PackedScene" path="res://dice_pair.tscn" id="3"]
 [ext_resource type="PackedScene" path="res://player_card.tscn" id="4"]
-[ext_resource type="PackedScene" path="res://piece_preview.tscn" id="5"]
 [ext_resource type="Texture2D" path="res://assets/фон2.png" id="6"]
 
 [node name="GameScreen" type="Control"]
@@ -91,6 +90,9 @@ theme_override_constants/separation = 12
 [node name="PlayerOne" parent="Margin/MainColumn/Body/LeftColumn" instance=ExtResource("4")]
 layout_mode = 2
 
+[node name="PlayerThree" parent="Margin/MainColumn/Body/LeftColumn" instance=ExtResource("4")]
+layout_mode = 2
+
 [node name="LeftSpacer" type="Control" parent="Margin/MainColumn/Body/LeftColumn"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -127,19 +129,12 @@ theme_override_constants/separation = 12
 [node name="PlayerTwo" parent="Margin/MainColumn/Body/RightColumn" instance=ExtResource("4")]
 layout_mode = 2
 
+[node name="PlayerFour" parent="Margin/MainColumn/Body/RightColumn" instance=ExtResource("4")]
+layout_mode = 2
+
 [node name="RightSpacer" type="Control" parent="Margin/MainColumn/Body/RightColumn"]
 layout_mode = 2
 size_flags_vertical = 3
-
-[node name="PreviewTitle" type="Label" parent="Margin/MainColumn/Body/RightColumn"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.27, 0.18, 0.4, 1)
-theme_override_font_sizes/font_size = 22
-text = "Полученная фигура"
-horizontal_alignment = 1
-
-[node name="PiecePreview" parent="Margin/MainColumn/Body/RightColumn" instance=ExtResource("5")]
-layout_mode = 2
 
 [node name="PreviewHint" type="Label" parent="Margin/MainColumn/Body/RightColumn"]
 custom_minimum_size = Vector2(0, 54)

@@ -1,7 +1,7 @@
 extends Control
 class_name GameBoard
 
-signal placement_changed
+signal state_changed
 
 var _model: BoardModel
 var _player_colors: Array[Color] = []
@@ -17,12 +17,9 @@ func _ready() -> void:
 func configure(model: BoardModel, player_colors: Array[Color]) -> void:
 	if _model != null and _model.changed.is_connected(_on_model_changed):
 		_model.changed.disconnect(_on_model_changed)
-	if _model != null and _model.selection_changed.is_connected(_on_model_selection_changed):
-		_model.selection_changed.disconnect(_on_model_selection_changed)
 	_model = model
 	_player_colors = player_colors.duplicate()
 	_model.changed.connect(_on_model_changed)
-	_model.selection_changed.connect(_on_model_selection_changed)
 	queue_redraw()
 
 
@@ -69,10 +66,7 @@ func _on_mouse_exited() -> void:
 
 func _on_model_changed() -> void:
 	queue_redraw()
-
-
-func _on_model_selection_changed() -> void:
-	placement_changed.emit()
+	state_changed.emit()
 
 
 func _draw() -> void:
@@ -86,9 +80,21 @@ func _draw() -> void:
 		var offset := line_index * cell_size
 		draw_line(_board_rect.position + Vector2(offset, 0), _board_rect.position + Vector2(offset, side), Color(0.79, 0.74, 0.87), 1.0)
 		draw_line(_board_rect.position + Vector2(0, offset), _board_rect.position + Vector2(side, offset), Color(0.79, 0.74, 0.87), 1.0)
+	_draw_automatic_cells(cell_size)
 	_draw_placed_pieces(cell_size)
 	_draw_preview(cell_size)
+	_draw_starting_points(cell_size)
 	draw_rect(_board_rect, Color(0.42, 0.34, 0.55), false, 2.0)
+
+
+func _draw_automatic_cells(cell_size: float) -> void:
+	for cell_index in _model.automatic_cell_indices:
+		var owner_index := _model.cells[cell_index] - 1
+		var cell := Vector2i(cell_index % _model.count, cell_index / _model.count)
+		var rect := Rect2(_board_rect.position + Vector2(cell) * cell_size, Vector2.ONE * cell_size)
+		var color: Color = _player_colors[owner_index]
+		draw_rect(rect, Color(color.r, color.g, color.b, 0.40))
+		draw_rect(rect, Color(color.r, color.g, color.b, 0.75), false, 1.0)
 
 
 func _draw_placed_pieces(cell_size: float) -> void:
@@ -104,7 +110,7 @@ func _draw_placed_pieces(cell_size: float) -> void:
 
 
 func _draw_preview(cell_size: float) -> void:
-	if _model.dice == Vector2i.ZERO:
+	if _model.dice == Vector2i.ZERO or _model.current_offer_player < 0:
 		return
 	var at := _model.pending if _model.pending != Vector2i(-1, -1) else _model.hover
 	if at.x < 0 or at.y < 0:
@@ -115,7 +121,7 @@ func _draw_preview(cell_size: float) -> void:
 		Vector2(extent) * cell_size
 	)
 	var is_legal := _model.is_legal(at, extent)
-	var color := _player_colors[_model.current_player]
+	var color := _player_colors[_model.current_offer_player]
 	var visible_rect := rect.intersection(_board_rect)
 	if visible_rect.has_area():
 		var fill_alpha := 0.40 if is_legal else 0.12
@@ -124,6 +130,17 @@ func _draw_preview(cell_size: float) -> void:
 		draw_rect(visible_rect, Color(color.r, color.g, color.b, border_alpha), false, 3.0)
 	if _board_rect.encloses(rect):
 		_draw_area(rect, extent.x * extent.y, 1.0 if is_legal else 0.35)
+
+
+func _draw_starting_points(cell_size: float) -> void:
+	for starting_point in _model.starting_points:
+		if starting_point.visible_turns_remaining == 0:
+			continue
+		var center := _board_rect.position + (Vector2(starting_point.cell) + Vector2.ONE * 0.5) * cell_size
+		var radius := cell_size * 0.22
+		var color: Color = _player_colors[starting_point.player_index]
+		draw_circle(center, radius * 1.45, Color.WHITE)
+		draw_circle(center, radius, color)
 
 
 func _draw_area(rect: Rect2, square_count: int, text_alpha: float = 1.0) -> void:

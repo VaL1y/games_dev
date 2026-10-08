@@ -27,10 +27,6 @@ window/stretch/aspect="expand"
 window/size/min_width=1280
 window/size/min_height=720
 
-[physics]
-
-3d/physics_engine="Jolt Physics"
-
 [rendering]
 
 rendering_device/driver.windows="d3d12"

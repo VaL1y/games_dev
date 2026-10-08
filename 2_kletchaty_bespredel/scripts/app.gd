@@ -106,9 +106,9 @@ func _open_pause() -> void:
 	_push_screen(PAUSE_SCENE)
 
 
-func _start_game(board_size: int, players: Array[PlayerData]) -> void:
+func _start_game(board_size: int, players: Array[PlayerData], territory_mode: int) -> void:
 	var game_screen := _show_root(GAME_SCENE) as GameScreen
-	game_screen.start_game(board_size, players)
+	game_screen.start_game(board_size, players, territory_mode)
 
 
 func _open_main_menu() -> void:
